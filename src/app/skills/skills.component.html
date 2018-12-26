@@ -1,0 +1,44 @@
+<mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
+  <div>
+
+    <div class="row justify-content-center">
+      <img [src]="angu" height="50px" width="50px">
+      <img [src]="asp" height="50px" width="50px">
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <h3>Web development</h3>
+        <div *ngFor="let item of devWeb; let i=index" style="margin: 10px;">
+            <span>{{item.name}}</span>
+            <span style="float: right;">{{item.accuracy}}%</span>
+          <mat-progress-bar mode="determinate" [value]="item.accuracy"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+          <h3>Software</h3>
+          <div *ngFor="let item of software; let i=index" style="margin: 10px;">
+              <span>{{item.name}}</span>
+              <span style="float: right;">{{item.accuracy}}%</span>
+            <mat-progress-bar mode="determinate" [value]="item.accuracy"></mat-progress-bar>
+          </div>
+      </div>
+      <div class="col-md-4 text-center">
+          <h3>Personal</h3>
+          <div *ngFor="let item of personal; let i=index" style="margin: 10px;">
+              <span>{{item.name}}</span>
+              <span style="float: right;">{{item.accuracy}}%</span>
+            <mat-progress-bar mode="determinate" [value]="item.accuracy"></mat-progress-bar>
+          </div>
+      </div>
+    </div>
+    <!-- <h3 class="row justify-content-center">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3> -->
+    <!-- <blockquote class="row justify-content-center" style="margin: 20px;">
+      <p> 2018: IT development</p>
+      <p> 2015: Licence degree in fishing</p>
+      <p> 2010: lieutenant degree in fishing</p>
+      <p> 2008: bachelor's degree in experimental science</p>
+      <cite>Mourabit Mohamed, Dev, IT.</cite>
+    </blockquote> -->
+  </div>
+</mat-card>

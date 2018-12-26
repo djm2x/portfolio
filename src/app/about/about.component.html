@@ -1,0 +1,25 @@
+<!-- <div class="buttons-container">
+  <button mat-fab (click)="add()"><i class="material-icons">&#xE147;</i></button>
+  <button mat-fab (click)="remove(0)" [disabled]="list.length===0"><i class="material-icons">&#xE872;</i></button>
+</div>
+<div @list class="list-container">
+  <div @items class="box" 
+    (click)="remove(i)"
+    *ngFor="let item of list; let i=index;">
+  </div>
+</div> -->
+
+<mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
+  <div>
+
+    <div class="row justify-content-center">
+        <img [src]="img" width="50px" height="150px" width="150px" style="border-radius: 50%;">
+    </div>
+    <!-- <h3 class="row justify-content-center">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3> -->
+    <blockquote class="row justify-content-center" style="margin: 20px;">
+      My passion is to start from zero line to full application thats may hepls .
+      so i teel my self always : "I nedd more power".
+      <cite>Mourabit Mohamed, Dev, IT.</cite>
+  </blockquote>
+  </div>
+</mat-card>

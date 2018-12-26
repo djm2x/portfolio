@@ -1,21 +1,111 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="example-container">
 
-<router-outlet></router-outlet>
+    <header>
+        <!-- <app-loader class="topbar"></app-loader> -->
+
+        <!-- <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <button mat-button (click)="toggleSideNave()" routerLinkActive="active">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                <button mat-button >
+                    <mat-icon>home</mat-icon>
+                </button>
+                <span class="example-spacer"></span>
+
+
+            </mat-toolbar-row>
+        </mat-toolbar> -->
+    </header>
+    <!-- <app-admin *ngIf="session.userRole()"></app-admin> -->
+    <mat-sidenav-container class="example-sidenav-container">
+        <div #div (click)="snav.toggle()"></div>
+        <mat-sidenav #snav mode="side" [opened]="(!mobileQuery.matches) ? true : false" [fixedInViewport]="true"
+            fixedTopGap="0" style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);">
+
+            <mat-nav-list style="width: 180px; padding: 0;">
+                <div style="height:180px; padding: 0;">
+                    <img matLine [src]="userImg" alt="mourabit" width="180px" height="180px">
+
+                    <!-- <h3 matLine>Mourabit</h3>
+                    <p matLine>
+                        <span> Web delelopper full-stack </span>
+                        <span class="demo-2"> -- need for power </span>
+                    </p> -->
+                </div>
+                <mat-list-item (click)="scrollTo('section1')" [ngStyle]="{'background-color': (currentSection === 'section1') ? 'rgba(73, 255, 185, 0.534)' : ''}">
+                    <mat-icon>info</mat-icon>
+                    <span>About</span>
+                    <span style="border-bottom: 5px solid rgba(73, 255, 185, 0.534);"></span>
+                </mat-list-item>
+                <mat-list-item (click)="scrollTo('section2')" [ngStyle]="{'background-color': (currentSection === 'section2') ? 'rgba(73, 255, 185, 0.534)' : ''}">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Education</span>
+                </mat-list-item>
+                <mat-list-item (click)="scrollTo('section3')" [ngStyle]="{'background-color': (currentSection === 'section3') ? 'rgba(73, 255, 185, 0.534)' : ''}">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Skills</span>
+                </mat-list-item>
+                <mat-list-item (click)="scrollTo('section4')" [ngStyle]="{'background-color': (currentSection === 'section4') ? 'rgba(73, 255, 185, 0.534)' : ''}">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Experience</span>
+                </mat-list-item>
+                <mat-list-item (click)="scrollTo('section5')" [ngStyle]="{'background-color': (currentSection === 'section5') ? 'rgba(73, 255, 185, 0.534)' : ''}">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Contact</span>
+                </mat-list-item>
+                <button mat-button (click)="toggleSideNave()" routerLinkActive="active" style="position:absolute;bottom:10px;text-align:center;">
+                    <mat-icon>menu</mat-icon>
+                </button>
+
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <!-- <div class="header"></div> -->
+
+            <button mat-button (click)="toggleSideNave()" routerLinkActive="active" style="float: left;position: fixed;">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+
+            <main>
+                <!-- <div class="container"> -->
+                <!-- <router-outlet>
+                        </router-outlet> -->
+                <!-- <div id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"> -->
+                <div class="img1"></div>
+                <div id="section1" class="container">
+                    <app-about></app-about>
+                </div>
+                <!--  -->
+                <div class="img2"> </div>
+                <div id="section2" class="container">
+                    <app-education></app-education>
+                </div>
+                <!--  -->
+                <div class="img1"></div>
+                <div id="section3" class="container">
+                    <app-skills></app-skills>
+                </div>
+                <!--  -->
+                <div class="img2"></div>
+                <div id="section4" class="container">
+                    <app-experience></app-experience>
+                </div>
+                <!--  -->
+                <div class="img1"></div>
+                <div id="section5" class="container">
+                    <app-contact></app-contact>
+                </div>
+            </main>
+
+            <footer>
+                <app-footer></app-footer>
+            </footer>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
