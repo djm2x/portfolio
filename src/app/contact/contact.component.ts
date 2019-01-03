@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { animations } from '../animations';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: animations
 })
 export class ContactComponent implements OnInit {
   lat = 33.927251;
@@ -12,7 +14,7 @@ export class ContactComponent implements OnInit {
   zoom = 15;
   o = new User();
   myForm: FormGroup;
-
+  state = 'hide';
   constructor(private fb: FormBuilder, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -27,6 +29,12 @@ export class ContactComponent implements OnInit {
       email: [this.o.email, [Validators.required]],
       message: this.o.message
     });
+  }
+
+  onSectionChange(pos) {
+    if (pos === 5) {
+      this.state = 'show';
+    }
   }
 
   openSnackBar(myForm: FormGroup) {

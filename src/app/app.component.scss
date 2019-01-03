@@ -2,14 +2,8 @@
 .mat-form-field-wrapper {
   padding-bottom: 0px;;
 }
-.example-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.mat-elevation-z6 ,mat-toolbar-row {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
 .example-is-mobile .example-toolbar {
@@ -37,36 +31,9 @@ h1.example-app-name {
   padding-top: 80px;
 }
 
-
-.header{
-  background: url("../assets/back.jpg") no-repeat top center fixed;
-  background-size: cover;
-  height: 200px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: white;
-  text-align: center;
-  font-size: 50px;
-} 
-
-.img1{
-  background-image: url("../assets/back.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
-  background-attachment: fixed;
-} 
-
-.img2{
-  background-image: url("../assets/artisant.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
-  background-attachment: fixed;
-} 
+.example-spacer {
+  flex: 1 1 auto;
+}
 
 mat-sidenav{
   box-shadow: 2px 2px 10px -1px rgba(0,0,0,.2);

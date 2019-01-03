@@ -1,6 +1,7 @@
-import { Component, OnInit, HostBinding, ChangeDetectorRef, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostBinding, ChangeDetectorRef, OnDestroy, ViewChild, ElementRef, HostListener, Inject } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { SharedService } from './service.service';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,14 @@ export class AppComponent implements OnInit {
   @ViewChild('div') divHTML: ElementRef;
   mobileQuery: MediaQueryList;
   currentSection = 'section1';
-  userImg = '../assets/artisant.jpg';
-  constructor(private overlayContainer: OverlayContainer, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  userImg = '../assets/2.png';
+  color = 'accent';
+  checked = false;
+  disabled = false;
+  opened = false;
+  d = new Date();
+  constructor(private overlayContainer: OverlayContainer, changeDetectorRef: ChangeDetectorRef
+    , media: MediaMatcher, private service: SharedService) {
     // define the limite size
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     // mobileQuery.matches is listen for the size
@@ -24,20 +31,11 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.themeForBtnNav('default-theme');
+    setTimeout(() => this.opened = true, 800);
   }
-
-
-  onSectionChange(sectionId) {
-    this.currentSection = sectionId;
-    console.log(this.currentSection);
-  }
-
-  // setColorToButton(section: string): string {
-  //   return (this.currentSection === section) ? 'accent' : '';
-  // }
 
   scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView();
+    document.querySelector('#' + section).scrollIntoView({ behavior: 'smooth', block: 'center' });
     this.currentSection = section;
   }
 
@@ -45,19 +43,23 @@ export class AppComponent implements OnInit {
     this.divHTML.nativeElement.click();
   }
 
-  changeTheme(theme) {
-    switch (theme) {
-      case 'dark-theme':
+  changeTheme() {
+    console.log(this.checked);
+    this.checked ? this.checked = false : this.checked = true;
+    switch (this.checked) {
+      case true:
         console.log('>>>>>>>>>>>>>');
         this.defaultTheme = false;
         this.darkTheme = true;
+        this.service.filter = 'brightness(85%)';
         break;
       default:
         this.darkTheme = false;
         this.defaultTheme = true;
+        this.service.filter = '';
         break;
     }
-    this.themeForBtnNav(theme);
+    // this.themeForBtnNav(theme);
   }
 
   themeForBtnNav(theme) {

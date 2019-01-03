@@ -398,13 +398,17 @@ MIT
 
 @angular/material/tooltip
 
+@angular/material/toolbar
+
+@angular/material/icon
+
+@angular/material/slide-toggle
+
 @angular/material/sidenav
 
 @angular/material/core
 
 @angular/material/list
-
-@angular/material/icon
 
 @angular/material/card
 
@@ -436,8 +440,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-
-@angular/material/toolbar
 
 @angular/fire
 MIT

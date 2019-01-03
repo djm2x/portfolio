@@ -25,6 +25,7 @@ import {
   MatTableModule,
   MatSidenavModule,
   MatListModule,
+  MatSlideToggleModule,
 } from '@angular/material';
 
 
@@ -54,7 +55,8 @@ import {
     MatPaginatorModule,
     MatTableModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSlideToggleModule,
   ],
   imports: [
     CommonModule,

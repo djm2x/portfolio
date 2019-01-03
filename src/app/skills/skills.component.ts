@@ -1,21 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { animations } from '../animations';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./skills.component.scss'],
+  animations: animations
 })
 export class SkillsComponent implements OnInit {
-  angu = '../../../assets/angu.png';
-  asp = '../../../assets/asp.png';
-
   devWeb = [];
   software = [];
   personal = [];
+  state = 'hide';
+
   constructor() { }
 
   ngOnInit() {
     this.setSkilles();
+  }
+
+  onSectionChange(pos) {
+    // console.log('>>>>>>>>>>>>>>>>>>>');
+    if (pos === 3) {
+      this.state = 'show';
+    }
   }
 
   setSkilles() {
@@ -41,5 +49,4 @@ export class SkillsComponent implements OnInit {
       { name: 'Creativity', accuracy: 70 },
     );
   }
-
 }

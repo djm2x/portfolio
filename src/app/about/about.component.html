@@ -1,25 +1,36 @@
-<!-- <div class="buttons-container">
-  <button mat-fab (click)="add()"><i class="material-icons">&#xE147;</i></button>
-  <button mat-fab (click)="remove(0)" [disabled]="list.length===0"><i class="material-icons">&#xE872;</i></button>
-</div>
-<div @list class="list-container">
-  <div @items class="box" 
-    (click)="remove(i)"
-    *ngFor="let item of list; let i=index;">
+<div class="img1" [ngStyle]="{'background-image': 'url(' + img+ ')', 'filter': service.filter}">
+  <div class="h1" [@scrollTitle]="state">
+
+    <h1>Mon Port-Folio</h1>
+    <mat-icon style="font-size: 40px;">keyboard_arrow_down</mat-icon>
   </div>
-</div> -->
+</div>
 
-<mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
-  <div>
-
-    <div class="row justify-content-center">
+<div class="container">
+  <mat-card [@scrollAnimation]="state" style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: -140px 0 0 0;">
+    <div class="row  justify-content-center">
+      <div class="col-md-8 text">
+        <div *ngFor="let item of list; let i=index">
+          <p><i [class]="item.icon" style="font-size: 20px;"></i>&nbsp;&nbsp;&nbsp;{{item.name}}</p>
+        </div>
+      </div>
+      <!-- <div class="between">
+        
+      </div> -->
+      <div class="col-md-4">
         <img [src]="img" width="50px" height="150px" width="150px" style="border-radius: 50%;">
+      </div>
     </div>
-    <!-- <h3 class="row justify-content-center">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</h3> -->
-    <blockquote class="row justify-content-center" style="margin: 20px;">
-      My passion is to start from zero line to full application thats may hepls .
+  </mat-card>
+
+  <mat-card [@scrollAnimation]="state" style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px 0 20px;">
+    <!-- <div class="row justify-content-center">
+      <img [src]="img" width="50px" height="150px" width="150px" style="border-radius: 50%;">
+    </div> -->
+    <div class="text-center" style="margin: 20px;font-size: 20px;">
+      My passion is to create from zero line to full application thats may hepls others for their lifes.
       so i teel my self always : "I nedd more power".
       <cite>Mourabit Mohamed, Dev, IT.</cite>
-  </blockquote>
-  </div>
-</mat-card>
+    </div>
+  </mat-card>
+</div>

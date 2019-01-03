@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { animations } from '../animations';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+  styleUrls: ['./experience.component.scss'],
+  animations: animations
 })
 export class ExperienceComponent implements OnInit {
-  reccete = '../../../assets/recetario.jpg';
-  artisant = '../../../assets/artisant.jpg';
+  state = 'hide';
+  reccete = '../../assets/recette.jpg';
+  artisant = '../../assets/artisant.jpg';
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSectionChange(pos) {
+    if (pos === 4) {
+      this.state = 'show';
+    }
   }
 
   get gotoRecette() {

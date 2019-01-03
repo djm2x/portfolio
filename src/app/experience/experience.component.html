@@ -1,43 +1,36 @@
-<mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
-  <div>
+<app-title title="Experience & Projects" section="4"></app-title>
 
-    <!-- <div class="row justify-content-center">
-        <img [src]="angu" height="50px" width="50px">
-        <img [src]="asp" height="50px" width="50px">
-      </div> -->
+<div class="container" appScroll (sectionChange)="onSectionChange($event)">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center" [@scrollAnimation]="state">
+      <mat-card style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px 0 20px;">
 
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
-
-          <img mat-card-image [src]="reccete" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p>
-              Website to view recipes from the kitchen and share his knowledge.
-              Also we interact with the recipe author to contribute in the latter
-              to improve the quality of recipes and skills.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button (click)="gotoRecette">LINK</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-      <div class="col-md-6 text-center">
-        <mat-card style="background-color: bisque;border-radius: 0;box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px;">
-
-          <img mat-card-image [src]="artisant" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p>
-              Web application created to find wanted craftsman. The App uses location,
-              comment and rating to find the closest and most suitable worker
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button (click)="gotoOuvrier">LINK</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+        <img mat-card-image [src]="reccete" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            Website to view recipes from the kitchen and share his knowledge.
+            Also we interact with the recipe author to contribute in the latter
+            to improve the quality of recipes and skills.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="gotoRecette">LINK</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-6 text-center" [@scrollAnimation]="state">
+      <mat-card style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px 0 20px;">
+        <img mat-card-image [src]="artisant" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            Web application created to find wanted craftsman. The App uses location,
+            comment and rating to find the closest and most suitable worker
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="gotoOuvrier">LINK</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
-</mat-card>
+</div>
